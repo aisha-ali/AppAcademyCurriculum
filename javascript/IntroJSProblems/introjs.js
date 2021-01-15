@@ -7,6 +7,7 @@ function mysteryScoping1() {
   console.log(x);
 }
 
+mysteryScoping1(); // in block, in block
 
 function mysteryScoping2() {
   const x = 'out of block';
@@ -17,6 +18,8 @@ function mysteryScoping2() {
   console.log(x);
 }
 
+mysteryScoping2(); // in block, out of block
+
 function mysteryScoping3() {
   const x = 'out of block';
   if (true) {
@@ -25,7 +28,8 @@ function mysteryScoping3() {
   }
   console.log(x);
 }
-// Syntax Error
+
+mysteryScoping3(); // SyntaxError
 
 function mysteryScoping4() {
   let x = 'out of block';
@@ -36,6 +40,8 @@ function mysteryScoping4() {
   console.log(x);
 }
 
+mysteryScoping4(); // in block, out of block
+
 function mysteryScoping5() {
   let x = 'out of block';
   if (true) {
@@ -45,7 +51,9 @@ function mysteryScoping5() {
   let x = 'out of block again';
   console.log(x);
 }
-// Syntax Error
+
+mysteryScoping5(); // SyntaxError
+
 
 
 function madLib(verb, adj, noun) {
