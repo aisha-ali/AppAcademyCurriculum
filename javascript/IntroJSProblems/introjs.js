@@ -7,6 +7,7 @@ function mysteryScoping1() {
   console.log(x);
 }
 
+
 function mysteryScoping2() {
   const x = 'out of block';
   if (true) {
@@ -24,6 +25,7 @@ function mysteryScoping3() {
   }
   console.log(x);
 }
+// Syntax Error
 
 function mysteryScoping4() {
   let x = 'out of block';
@@ -43,6 +45,8 @@ function mysteryScoping5() {
   let x = 'out of block again';
   console.log(x);
 }
+// Syntax Error
+
 
 function madLib(verb, adj, noun) {
   return `We shall ${verb.toUpperCase()} the ${adj.toUpperCase()} ${noun.toUpperCase()}.`
