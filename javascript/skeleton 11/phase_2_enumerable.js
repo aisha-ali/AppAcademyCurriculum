@@ -8,7 +8,7 @@ Array.prototype.myEach = function (func) {
 };
 
 NUMS.myEach((num) => {
-  console.log(`square of ${num} is ${num * num}`);
+  console.log(`${num} is ${num / num}`);
 });
 
 
@@ -22,6 +22,7 @@ Array.prototype.myMap = function (func) {
 
 console.log(NUMS.myMap(num => num * num));
 
+console.log("hi");
 
 Array.prototype.myReduce = function (func, initialValue) {
 
@@ -40,3 +41,7 @@ Array.prototype.myReduce = function (func, initialValue) {
 };
 
 console.log(NUMS.myReduce((total, item) => total + item));
+
+
+
+
