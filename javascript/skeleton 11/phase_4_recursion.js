@@ -75,3 +75,61 @@ dupedArray[0].push(4);
 
 console.log(`deepDup duped = ${JSON.stringify(dupedArray)} (should be mutated)`);
 
+
+function bsearch(numbers, target) {
+  if (numbers.length === 0) {
+    return -1;
+  }
+
+  const probeIdx = Math.floor(numbers.length / 2);
+  const probe = numbers[probeIdx];
+
+  if (target === probe) {
+    return probeIdx;
+  } else if (target < probe) {
+    const left = numbers.slice(0, probeIdx);
+    return bsearch(left, target);
+  } else {
+    const right = numbers.slice(probeIdx + 1);
+    const subProblem = bsearch(right, target);
+
+    return subProblem === -1 ? -1 : subProblem + (probeIdx + 1);
+  }
+}
+
+
+function merge(left, right) {
+  const merged = [];
+
+  while (left.length > 0 && right.length > 0) {
+    let nextItem = (left[0] < right[0]) ? left.shift() : right.shift();
+    merged.push(nextItem);
+  }
+
+  return merged.concat(left, right);
+}
+
+function mergeSort(array) {
+  if (array.length < 2) {
+    return array;
+  } else {
+    const middle = Math.floor(array.length / 2);
+
+    const left = mergeSort(array.slice(0, middle));
+    const right = mergeSort(array.slice(middle));
+
+    return merge(left, right);
+  }
+}
+
+
+function subsets(array) {
+  if (array.length === 0) {
+    return [[]];
+  }
+
+  const first = array[0];
+  const withFirst = withoutFirst.map(sub => [first].concat(sub));
+
+  return withoutFirst.concat(withFirst);
+}
