@@ -1,24 +1,23 @@
+// constructor function
 function Cat(name, owner) {
   this.name = name;
   this.owner = owner;
 }
 
 Cat.prototype.cuteStatement = function () {
-  return `${this.owner} loves ${this.name}. :3`;
+  return `${this.owner} loves ${this.name}`;
 };
 
-const cat1 = new Cat('Markov', 'Ned');
-const cat2 = new Cat('Breakfast', 'Devon');
+// cat instances to test out 
+const cat1 = new Cat('Butters', 'Aisha');
 
 console.log(cat1.cuteStatement());
-console.log(cat2.cuteStatement());
+
 
 Cat.prototype.cuteStatement = function () {
   return `Everyone loves ${this.name}!`;
 };
-
 console.log(cat1.cuteStatement());
-console.log(cat2.cuteStatement());
 
 Cat.prototype.meow = function () {
   return 'meow';
@@ -26,9 +25,10 @@ Cat.prototype.meow = function () {
 
 console.log(cat1.meow());
 
+// setting the meow property on the instance
 cat1.meow = function () {
   return 'purr';
 };
 
 console.log(cat1.meow());
-console.log(cat2.meow());
+
