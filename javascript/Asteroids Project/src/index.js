@@ -1,6 +1,5 @@
-const MovingObject = require("./moving_object.js");
-
-window.MovingObject = MovingObject;
+const Game = require("./game");
+const GameView = require("./game_view");
 
 document.addEventListener("DOMContentLoaded", function () {
   const canvasEl = document.getElementsByTagName("canvas")[0];
@@ -11,6 +10,5 @@ document.addEventListener("DOMContentLoaded", function () {
   const game = new Game();
   new GameView(game, ctx).start();
 });
-
 
 console.log("Webpack is working!")
