@@ -52,6 +52,37 @@ View.prototype.exercise7 = function () {
 };
 
 
+View.prototype.setupEasel = function () {
+  const $addRowButton = $('<button>').html('Add a row');
+  this.$el.append($addRowButton);
+  $addRowButton.on("click", this.addRow.bind(this));
+
+  for (let j = 0; j <= 7; j++) {
+    const $button = $("<button>").html("Exercise " + j);
+    $button.on("click", this["exercise" + j]);
+    this.$el.append($button);
+  }
+
+  for (let i = 0; i < 20; i++) {
+    this.addRow();
+  }
+};
+
+View.prototype.addRow = function () {
+  const rowIdx = this.$el.find(".row").length;
+  const $row = $("<ul>").addClass("row").addClass("group");
+  for (let colIdx = 0; colIdx < 20; colIdx++) {
+    const $square = $("<li>").addClass("square").attr("data-pos", [rowIdx, colIdx]);
+    $square.on("mouseenter", (e) => {
+      const $square = $(e.currentTarget);
+      $square.css("background-color", window._randomColorString());
+    });
+    $row.append($square);
+  }
+  this.$el.append($row);
+};
+
+
 module.exports = View;
 
 
