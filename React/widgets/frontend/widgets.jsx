@@ -7,11 +7,6 @@ function Root() {
   return (
     <div>
       <Clock />
-      <Weather />
-      <div className='interactive'>
-        <Tabs panes={panes} />
-        <AutoComplete names={names} />
-      </div>
     </div>
   );
 }
