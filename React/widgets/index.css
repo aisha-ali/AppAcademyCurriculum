@@ -7,7 +7,7 @@ span, article, footer, time, small {
   padding: 0;
   border: 0;
   outline: 0;
-  font: sans-serif;
+  font-family: Raleway;
   color: inherit;
   text-align: inherit;
   text-decoration: inherit;
@@ -16,6 +16,40 @@ span, article, footer, time, small {
   background: transparent;
   list-style: none;
 }
+
+
+
+.auto{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  width: 191px;
+  height: 200px;
+  border: 2px solid black;
+  margin: 0 20px 20px 20px;
+  padding: 10px;
+  background-color: rgb(163, 247, 166);
+  background-size: cover;
+  background-position: center;
+}
+
+.auto > *{
+  margin-left: 30px;
+}
+
+.auto > input{
+  margin: 10px 30px 0 30px;
+  border: 1px solid black;
+}
+
+.auto li{
+  cursor: pointer;
+  list-style-type: square;
+}
+
+
+
+
 
 .clock{
   font-size: 40px;
@@ -35,6 +69,30 @@ span, article, footer, time, small {
   margin: 5px;
   display: flex;
   justify-content: space-between;
+}
+
+
+
+
+.weather{
+  font-size: 28px;
+  width: 550px;
+  height: 94px;
+  border: 2px solid black;
+  margin: 0 20px 20px 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(166, 123, 203);
+  background-size: cover;
+  background-position-y: 20%;
+}
+
+.weather p{
+  margin: 8px;
+}
+
+.loading{
+  margin-top: 30px;
 }
 
 
@@ -96,7 +154,6 @@ span, article, footer, time, small {
   align-items: center;
   justify-content: center;
   background-color: lightblue;
-  background-image: url(https://hd.unsplash.com/photo-1445112098124-3e76dd67983c);
   background-size: cover;
 }
 

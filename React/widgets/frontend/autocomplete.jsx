@@ -44,6 +44,7 @@ export default class AutoComplete extends React.Component {
       return (
         <li key={i} onClick={this.selectName}>{result}</li>
       );
+
     });
     return (
       <div>
