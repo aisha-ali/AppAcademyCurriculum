@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store} />, root);
 });
 
-configureStore();
+
 
 window.store = store;
