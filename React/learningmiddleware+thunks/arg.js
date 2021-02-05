@@ -53,3 +53,27 @@ function restWay(firstArg, ...otherArgs) {
     console.log(arg);
   });
 }
+
+function madLib(verb, pluralNoun1, pluralNoun2, place) {
+  return `I like to ${verb} ${pluralNoun1} with ${pluralNoun2} by the ${place}.`;
+}
+
+const words = ["eat", "socks", "rabbits", "sea"];
+
+madLib(...words); // equivalent to 'madLib(words[0], words[1], words[2], words[3])'
+//=> "I like to eat socks with rabbits by the sea."
+
+
+const myFunction = (v, w, x, y, z) => { }
+const args = [2, 3];
+myFunction(1, ...args, 4, ...[5]); // v = 1, w = 2, x = 3, y = 4, z = 5
+
+
+
+function add(x, y = 17) {
+  // y is 17 if not passed or passed as `undefined`
+  return x + y;
+}
+
+add(3) === 20; //=> true
+add(3, undefined) === 20; //=> true
