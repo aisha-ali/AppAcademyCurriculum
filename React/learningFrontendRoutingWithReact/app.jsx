@@ -20,4 +20,16 @@ class Example extends React.Component {
 
 <a href="#/users/123">Michael</a>
 
+<Switch>
+  <Route path="some/url" component={SomeComponent} />
+
+  <Route path="some/other/url" component={OtherComponent} />
+
+  <Route component={DefaultComponent} />
+
+</Switch>
+
 }
+
+
+
