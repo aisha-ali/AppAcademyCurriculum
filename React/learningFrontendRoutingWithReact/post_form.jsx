@@ -14,3 +14,15 @@ class PostForm extends React.Component {
       return props.post;
     }
   }
+
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.target.value });
+    };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    // `submit` will be a thunk action that presumably creates or edits a post
+    this.props.submit(this.state);
+  }
