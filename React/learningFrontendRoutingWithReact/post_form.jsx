@@ -26,3 +26,31 @@ class PostForm extends React.Component {
     // `submit` will be a thunk action that presumably creates or edits a post
     this.props.submit(this.state);
   }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Title
+          <input
+            type="text"
+            onChange={this.update("title")}
+            value={this.state.title}
+          />
+        </label>
+
+        <label>
+          Body
+          <input
+            type="text"
+            onChange={this.update("body")}
+            value={this.state.body}
+          />
+        </label>
+
+        <button>Submit Post</button>
+      </form>
+    );
+  }
+}
+
