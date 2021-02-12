@@ -7,3 +7,14 @@ const mapStateToProps = state => {
     post: { title: "", body: "" } // a default blank object
   };
 };
+
+const mapDispatchToProps = dispatch => {
+  return {
+    submit: post => dispatch(createPost(post))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PostForm);
