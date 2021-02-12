@@ -29,6 +29,14 @@ class Example extends React.Component {
 
 </Switch>
 
+
+// very basic example
+<Route
+  exact
+  path="/"
+  render={() => (this.props.currentUser ? <Home /> : <Redirect to="/login" />)}
+/>
+
 }
 
 
