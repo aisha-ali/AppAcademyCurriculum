@@ -15,3 +15,21 @@ const mapDispatchToProps = dispatch => {
     submit: post => dispatch(updatePost(post))
   };
 };
+
+class EditPostForm extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchPost(this.props.match.params.postId);
+  }
+
+  render() {
+    const { post, submit } = this.props;
+    return <PostForm post={post} submit={submit} />;
+  }
+}
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditPostForm);
