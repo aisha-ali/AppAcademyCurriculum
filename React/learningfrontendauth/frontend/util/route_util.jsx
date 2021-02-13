@@ -25,3 +25,10 @@ const mapStateToProps = state => {
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+
+
+
+
+import { ProtectedRoute } from '/file/path/to/rout_util';
+
+<ProtectedRoute exact path="/reviews/new" component={ReviewForm} />
