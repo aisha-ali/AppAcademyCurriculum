@@ -987,29 +987,6 @@ var TodoListItem = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/reducers/root_reducer.js":
-/*!*******************************************!*\
-  !*** ./frontend/reducers/root_reducer.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
-/* harmony import */ var _todos_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todos_reducer */ "./frontend/reducers/todos_reducer.js");
-/* harmony import */ var _steps_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./steps_reducer */ "./frontend/reducers/steps_reducer.js");
-
-
-
-var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  todos: _todos_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  steps: _steps_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
-});
-/* harmony default export */ __webpack_exports__["default"] = (rootReducer);
-
-/***/ }),
-
 /***/ "./frontend/reducers/selectors.js":
 /*!****************************************!*\
   !*** ./frontend/reducers/selectors.js ***!
@@ -1039,160 +1016,14 @@ var stepsByTodoId = function stepsByTodoId(_ref2, todo_id) {
 
 /***/ }),
 
-/***/ "./frontend/reducers/steps_reducer.js":
-/*!********************************************!*\
-  !*** ./frontend/reducers/steps_reducer.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _actions_step_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/step_actions */ "./frontend/actions/step_actions.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-var stepsReducer = function stepsReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-  var nextState;
-  Object.freeze(state);
-
-  switch (action.type) {
-    case _actions_step_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_STEPS"]:
-      nextState = Object.assign({}, state);
-      action.steps.forEach(function (step) {
-        return nextState[step.id] = step;
-      });
-      return nextState;
-
-    case _actions_step_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_STEP"]:
-      return Object.assign({}, state, _defineProperty({}, action.step.id, action.step));
-
-    case _actions_step_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_STEP"]:
-      nextState = Object.assign({}, state);
-      delete nextState[action.step.id];
-      return nextState;
-
-    default:
-      return state;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (stepsReducer); // Sample State Shape
-// {
-//   1: {
-//     title: "walk to store",
-//     done: false,
-//     todo_id: 1
-//   },
-//   2: {
-//     title: "buy soap",
-//     done: false,
-//     todo_id: 1
-//   },
-//   3: {
-//     title: "walk to park",
-//     done: false,
-//     todo_id: 3
-//   },
-//   4: {
-//     title: "play with dog",
-//     done: false,
-//     todo_id: 2
-//   }
-// };
-
-/***/ }),
-
-/***/ "./frontend/reducers/todos_reducer.js":
-/*!********************************************!*\
-  !*** ./frontend/reducers/todos_reducer.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/todo_actions */ "./frontend/actions/todo_actions.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-var todosReducer = function todosReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
-  var nextState = {};
-
-  switch (action.type) {
-    case _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TODOS"]:
-      action.todos.forEach(function (todo) {
-        nextState[todo.id] = todo;
-      });
-      return nextState;
-
-    case _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TODO"]:
-      var newTodo = _defineProperty({}, action.todo.id, action.todo);
-
-      return Object.assign({}, state, newTodo);
-
-    case _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_TODO"]:
-      nextState = Object.assign({}, state);
-      delete nextState[action.todo.id];
-      return nextState;
-
-    case _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__["TODO_ERROR"]:
-      alert(action.error);
-
-    default:
-      return state;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (todosReducer); // Sample State Shape
-// {
-//   "1": {
-//     id: 1,
-//     title: "wash car",
-//     body: "with soap",
-//     done: false
-//   },
-//   "2": {
-//     id: 2,
-//     title: "wash dog",
-//     body: "with shampoo",
-//     done: true
-//   },
-// };
-
-/***/ }),
-
 /***/ "./frontend/store/store.js":
 /*!*********************************!*\
   !*** ./frontend/store/store.js ***!
   \*********************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
-/* harmony import */ var _reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/root_reducer */ "./frontend/reducers/root_reducer.js");
-
-
-
-var configureStore = function configureStore() {
-  var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState);
-  store.subscribe(function () {
-    localStorage.state = JSON.stringify(store.getState());
-  });
-  return store;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (configureStore);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/frontend/store/store.js: Unexpected token (21:0)\n\n\u001b[0m \u001b[90m 19 |\u001b[39m   console\u001b[33m.\u001b[39mlog(store\u001b[33m.\u001b[39mgetState())\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 |\u001b[39m \u001b[36mdefault\u001b[39m configureStore\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m\u001b[0m\n    at Object._raise (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:776:17)\n    at Object.raiseWithData (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:769:17)\n    at Object.raise (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:737:17)\n    at Object.unexpected (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:9253:16)\n    at Object.parseExprAtom (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10743:20)\n    at Object.parseExprAtom (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:4996:20)\n    at Object.parseExprSubscripts (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10318:23)\n    at Object.parseUpdate (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10298:21)\n    at Object.parseMaybeUnary (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10276:23)\n    at Object.parseExprOps (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10141:23)\n    at Object.parseMaybeConditional (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10115:23)\n    at Object.parseMaybeAssign (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10078:21)\n    at Object.parseExpressionBase (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10023:23)\n    at /Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10017:39\n    at Object.allowInAnd (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:11711:16)\n    at Object.parseExpression (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:10017:17)\n    at Object.parseStatementContent (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:11977:23)\n    at Object.parseStatement (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:11846:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:12428:25)\n    at Object.parseBlockBody (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:12419:10)\n    at Object.parseTopLevel (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:11777:10)\n    at Object.parse (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:13583:10)\n    at parse (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/parser/lib/index.js:13636:38)\n    at parser (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/core/lib/transformation/normalize-file.js:99:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/aishaali/Desktop/App Academy/React/middlewareHWskeleton/node_modules/@babel/core/lib/transform.js:27:41)");
 
 /***/ }),
 
