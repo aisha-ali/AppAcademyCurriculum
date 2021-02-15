@@ -1,52 +1,41 @@
-import { uniqueId } from '../../util/id_generator'
 import React from 'react';
-class StepForm extends React.Component {
+class StepListItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: "",
-      body: "",
-      done: false,
-      todo_id: this.props.todo_id
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleStep = this.toggleStep.bind(this);
   }
-  update(property) {
-    return e => this.setState({ [property]: e.target.value });
-  }
-  handleSubmit(e) {
-    e.preventDefault();
-    const step = Object.assign({}, this.state, { id: uniqueId() });
-    this.props.receiveStep(step);
-    this.setState({
-      title: "",
-      body: ""
-    }); // reset form
+  toggleStep(e) {
+    const toggledStep = Object.assign(
+      {},
+      this.props.step,
+      { done: !this.props.step.done }
+    );
+    this.props.receiveStep(toggledStep);
   }
   render() {
     return (
-      <form className="step-form" onSubmit={this.handleSubmit}>
-        <label>Title:
-<input
-            className="input"
-            ref="title"
-            value={this.state.title}
-            placeholder="walk to store"
-            onChange={this.update('title')}
-            required />
-        </label>
-        <label>Description:
-<input
-            className="input"
-            ref="body"
-            value={this.state.body}
-            placeholder="google store directions"
-            onChange={this.update('body')}
-            required />
-        </label>
-        <button className="create-button">Create Step!</button>
-      </form>
+      <li className="step-header">
+        <div className="step-info">
+          <h3>{this.props.step.title}</h3>
+          <p>{this.props.step.body}</p>
+        </div>
+        <div className="step-buttons">
+          <button
+            className={this.props.step.done ? "done" : "undone"}
+            onClick={this.toggleStep}
+          >
+            {this.props.step.done ? "Undo" : "Done"}
+          </button>
+          <button
+            className="delete-button"
+            onClick={this.props.removeStep}
+          >
+            Delete
+</button>
+        </div>
+      </li>
     );
   }
 }
-export default StepForm;
+
+export default StepListItem;
