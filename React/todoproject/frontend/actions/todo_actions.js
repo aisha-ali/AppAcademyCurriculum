@@ -31,11 +31,15 @@ export const fetchTodos = () => dispatch => (
 export const fetchTodo = id => dispatch => (
   TodoAPIUtil.fetchTodo(id).then(todo => dispatch(receiveTodo(todo)))
 );
-export const createTodo = todo => dispatch => (
-  TodoAPIUtil.createTodo(todo)
-    .then(todo => { dispatch(receiveTodo(todo)); dispatch(clearErrors()) },
-      err => dispatch(receiveErrors(err.responseJSON)))
-);
+const createTodo = todo => {
+  return dispatch => {
+    return APIUtil.createTodo(todo)
+      .then(
+        todo => dispatch(receiveTodo(todo)),
+        err => dispatch(receiveErrors(err.responseJSON))
+      )
+  }
+
 export const updateTodo = todo => dispatch => (
   TodoAPIUtil.updateTodo(todo).then(todo => dispatch(receiveTodo(todo)))
 );
