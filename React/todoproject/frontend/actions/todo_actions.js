@@ -39,6 +39,11 @@ const createTodo = todo => {
         err => dispatch(receiveErrors(err.responseJSON))
       )
   }
+};
+// const receiveTodos = (todos) => ({
+// type: RECEIVE_TODOS,
+//   todos,
+// });
 
 export const updateTodo = todo => dispatch => (
   TodoAPIUtil.updateTodo(todo).then(todo => dispatch(receiveTodo(todo)))
