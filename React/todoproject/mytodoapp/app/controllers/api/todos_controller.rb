@@ -16,3 +16,9 @@ before_action :deny_access_if_not_logged_in
       render json: @todo.errors.full_messages, status: 422
     end
   end
+
+  def destroy
+    @todo = current_user.todos.find(params[:id])
+    @todo.destroy
+    render json: @todo, include: :tags
+  end
