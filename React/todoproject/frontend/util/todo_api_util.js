@@ -24,9 +24,3 @@ export const updateTodo = todo => (
     data: { todo }
   })
 );
-export const destroyTodo = todo => (
-  $.ajax({
-    method: 'DELETE',
-    url: `api/todos/${todo.id}`
-  })
-);

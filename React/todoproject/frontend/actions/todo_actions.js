@@ -38,6 +38,8 @@ const createTodo = todo => {
         todo => dispatch(receiveTodo(todo)),
         err => dispatch(receiveErrors(err.responseJSON))
       )
+      }
+    }
   }
 };
 // const receiveTodos = (todos) => ({
