@@ -32,3 +32,11 @@ before_action :deny_access_if_not_logged_in
     end
   end
 
+
+  private
+  def todo_params
+    params.require(:todo).permit(:title, :body, :done, tag_names: [])
+  end
+end
+
+
