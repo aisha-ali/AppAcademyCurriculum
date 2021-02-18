@@ -22,3 +22,13 @@ before_action :deny_access_if_not_logged_in
     @todo.destroy
     render json: @todo, include: :tags
   end
+
+  def update
+    @todo = Todo.find(params[:id])
+    if @todo.update(todo_params)
+      render json: @todo, include: :tags
+    else
+      render json: @todo.errors.full_messages, status: 422
+    end
+  end
+
