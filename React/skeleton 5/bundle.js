@@ -119,67 +119,14 @@ var receiveSearchGiphys = function receiveSearchGiphys(giphys) {
 
 /***/ }),
 
-/***/ "./components/giphys_index.jsx":
-/*!*************************************!*\
-  !*** ./components/giphys_index.jsx ***!
-  \*************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/react.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _giphys_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./giphys_index_item */ "./components/giphys_index_item.jsx");
-/* harmony import */ var _giphys_index_item__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_giphys_index_item__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-/***/ }),
-
-/***/ "./components/giphys_index_item.jsx":
-/*!******************************************!*\
-  !*** ./components/giphys_index_item.jsx ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./components/giphys_search.jsx":
-/*!**************************************!*\
-  !*** ./components/giphys_search.jsx ***!
-  \**************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/react.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _giphys_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./giphys_index */ "./components/giphys_index.jsx");
-
-
-
-/***/ }),
-
 /***/ "./components/giphys_search_container.jsx":
 /*!************************************************!*\
   !*** ./components/giphys_search_container.jsx ***!
   \************************************************/
 /*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _giphys_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./giphys_search */ "./components/giphys_search.jsx");
-/* harmony import */ var _actions_giphy_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/giphy_actions */ "./actions/giphy_actions.js");
-
-
-
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nTypeError: /Users/aishaali/Desktop/App Academy/React/skeleton 5/components/giphys_search_container.jsx: Duplicate declaration \"connect\"\n\u001b[0m \u001b[90m 3 | \u001b[39m\u001b[36mimport\u001b[39m { fetchSearchGiphys } from \u001b[32m'../actions/giphy_actions'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 | \u001b[39m\u001b[36mimport\u001b[39m { connect } from \u001b[32m'react-redux'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 6 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mGiphysSearch\u001b[39m from \u001b[32m'./giphys_search'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 | \u001b[39m\u001b[36mimport\u001b[39m { fetchSearchGiphys } from \u001b[32m'../actions/giphy_actions'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 8 | \u001b[39m\u001b[36mconst\u001b[39m mapStateToProps \u001b[33m=\u001b[39m state \u001b[33m=>\u001b[39m {\u001b[0m\n    at File.buildCodeFrameError (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/core/lib/transformation/file/file.js:261:12)\n    at Scope.checkBlockScopedCollisions (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/scope/index.js:347:22)\n    at Scope.registerBinding (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/scope/index.js:504:16)\n    at Scope.registerDeclaration (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/scope/index.js:452:14)\n    at Object.Declaration (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/scope/index.js:125:12)\n    at NodePath._call (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/path/context.js:53:20)\n    at NodePath.call (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/path/context.js:40:17)\n    at NodePath.visit (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/path/context.js:88:12)\n    at TraversalContext.visitQueue (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/context.js:118:16)\n    at TraversalContext.visitMultiple (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/context.js:85:17)\n    at TraversalContext.visit (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/context.js:144:19)\n    at Function.traverse.node (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/index.js:94:17)\n    at traverse (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/index.js:76:12)\n    at NodePath.traverse (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/path/index.js:161:24)\n    at Scope.crawl (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/scope/index.js:684:10)\n    at Scope.init (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/scope/index.js:634:32)\n    at NodePath.setScope (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/path/context.js:126:30)\n    at NodePath.setContext (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/traverse/lib/path/context.js:141:8)\n    at new File (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/core/lib/transformation/file/file.js:104:8)\n    at normalizeFile (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/core/lib/transformation/normalize-file.js:141:10)\n    at runSync (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at /Users/aishaali/Desktop/App Academy/React/skeleton 5/node_modules/@babel/core/lib/transform.js:34:34\n    at processTicksAndRejections (node:internal/process/task_queues:75:11)");
 
 /***/ }),
 
