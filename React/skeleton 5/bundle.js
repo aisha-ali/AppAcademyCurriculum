@@ -90,13 +90,32 @@
 /*!**********************************!*\
   !*** ./actions/giphy_actions.js ***!
   \**********************************/
-/*! no exports provided */
+/*! exports provided: RECEIVE_SEARCH_GIPHYS, REQUEST_SEARCH_GIPHYS, fetchSearchGiphys, receiveSearchGiphys */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SEARCH_GIPHYS", function() { return RECEIVE_SEARCH_GIPHYS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REQUEST_SEARCH_GIPHYS", function() { return REQUEST_SEARCH_GIPHYS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSearchGiphys", function() { return fetchSearchGiphys; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSearchGiphys", function() { return receiveSearchGiphys; });
 /* harmony import */ var _util_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/api_util */ "./util/api_util.js");
 
+var RECEIVE_SEARCH_GIPHYS = 'RECEIVE_SEARCH_GIPHYS';
+var REQUEST_SEARCH_GIPHYS = 'REQUEST_SEARCH_GIPHYS';
+var fetchSearchGiphys = function fetchSearchGiphys(searchTerm) {
+  return function (dispatch) {
+    return _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchSearchGiphys"](searchTerm).then(function (giphys) {
+      return dispatch(receiveSearchGiphys(giphys.data));
+    });
+  };
+};
+var receiveSearchGiphys = function receiveSearchGiphys(giphys) {
+  return {
+    type: RECEIVE_SEARCH_GIPHYS,
+    giphys: giphys
+  };
+};
 
 /***/ }),
 
