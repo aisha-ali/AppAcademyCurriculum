@@ -139,3 +139,15 @@ class LinkedList {
         this.length--;
         return removed;
     }
+    
+    size() {
+        return this.length;
+    }
+}
+
+exports.Node = Node;
+exports.LinkedList = LinkedList;
+
+
+
+
