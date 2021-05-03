@@ -39,3 +39,65 @@ function sumArray(array) {
     if (array.length === 0) return 0;
     return array[0] + sumArray(array.slice(1));
 }
+
+
+
+// Write a function, reverseString(str), that takes in a string.
+// The function should return the string with it's characters in reverse order.
+//
+// Solve this recursively!
+//
+// Examples:
+// 
+// reverseString("")            // => ""
+// reverseString("c")           // => "c"
+// reverseString("internet")    // => "tenretni"
+// reverseString("friends")     // => "sdneirf"
+function reverseString(str) {
+    if (str.length === 0) return '';
+    return reverseString(str.slice(1)) + str[0];
+}
+
+
+// Write a function, reverseString(str), that takes in a string.
+// The function should return the string with it's characters in reverse order.
+//
+// Solve this recursively!
+//
+// Examples:
+// 
+// reverseString("")            // => ""
+// reverseString("c")           // => "c"
+// reverseString("internet")    // => "tenretni"
+// reverseString("friends")     // => "sdneirf"
+function reverseString(str) {
+    if (str.length === 0) return '';
+    return reverseString(str.slice(1)) + str[0];
+}
+
+
+// Write a function, pow(base, exponent), that takes in two numbers.
+// The function should calculate the base raised to the exponent power.
+//
+// Note: 
+// A negative exponent can be calculate by taking the reciprocal of the positive exponent.
+// That is, pow(2, -5) is equal to 1 / pow(2, 5)
+// 
+// Solve this recursively!
+//
+// Examples:
+//
+// pow(2, 0)    // => 1
+// pow(2, 1)    // => 2
+// pow(2, 5)    // => 32
+// pow(3, 4)    // => 81
+// pow(2, -5)   // => 0.03125
+function pow(base, exponent) {
+    if (exponent === 0) return 1;
+
+    if (exponent < 0) {
+        return 1 / pow(base, Math.abs(exponent));
+    } else {
+        return base * pow(base, exponent - 1);
+    }
+}
