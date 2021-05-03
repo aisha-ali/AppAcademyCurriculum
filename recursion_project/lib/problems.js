@@ -211,3 +211,40 @@ function flatten(data) {
 // fileFinder(desktop, 'app_academy_logo.svg');     // => true
 // fileFinder(desktop, 'everlong.flac');            // => true
 // fileFinder(desktop, 'sequoia.jpeg');             // => false
+
+
+function fileFinder(directories, targetFile) {
+    for (let dir in directories) {
+        if (dir === targetFile || fileFinder(directories[dir], targetFile) === true) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+// Write another function, pathFinder(directories, targetFile), that returns the path that contains the targetFile.
+// If the targetFile is not found in the directories, then return null.
+// You can assume the files are unique.
+//
+// Example using the same desktop from previously:
+//
+// pathFinder(desktop, 'trixie_lou.jpeg'));     // => '/images/pets/trixie_lou.jpeg'
+// pathFinder(desktop, 'everlong.flac'));       // => '/music/genres/rock/everlong.flac'
+// pathFinder(desktop, 'honeybadger.png'));     // => null
+function pathFinder(directories, targetFile) {
+    for (let dir in directories) {
+        if (dir === targetFile) {
+            return '/' + dir;
+        }
+
+        let path = pathFinder(directories[dir], targetFile);
+        if (path !== null) {
+            return dir + path;
+        }
+    }
+
+    return null;
+}
+
